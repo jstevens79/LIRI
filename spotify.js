@@ -8,20 +8,20 @@ var getSpotify = function(a) {
     type: 'track',
     query: a,
   }).then(function(resp) {
-    // resp.tracks.items.forEach(function(item) {
-    //   console.log(item)
-    // })
+    
+    resp.tracks.items.forEach(function(item) {
+      var artist = item.album.artists[0].name;
+      var songName = item.name;
+      var previewLink = item.preview_url;
+      var album = item.album.name;
+      console.log('Artist: ', artist);
+      console.log('Song Title: ', songName);
+      console.log('Preview Link: ', previewLink);
+      console.log('Album: ', album)
+    })
 
     // if no results, default to "the sign" by ace of base
 
-    var artist = resp.tracks.items[0].album.artists[0].name;
-    var songName = resp.tracks.items[0].name;
-    var previewLink = resp.tracks.items[0].preview_url;
-    var album = resp.tracks.items[0].album.name;
-
-    console.log(album)
-    // name
-    // preview_url
   }).catch(function(err){
     console.log(err)
   })
