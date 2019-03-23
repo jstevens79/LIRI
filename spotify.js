@@ -7,15 +7,23 @@ var getSpotify = function(a) {
   spotify.search({
     type: 'track',
     query: a,
-  }, function(err, data) {
-    if (err) {
-      return console.log('Error occurred: ', err);
-    }
+  }).then(function(resp) {
+    // resp.tracks.items.forEach(function(item) {
+    //   console.log(item)
+    // })
 
-    console.log(data);
+    // if no results, default to "the sign" by ace of base
 
+    var artist = resp.tracks.items[0].album.artists[0].name;
+    var songName = resp.tracks.items[0].name;
+    var previewLink = resp.tracks.items[0].preview_url;
+    var album = resp.tracks.items[0].album.name;
+
+    console.log(album)
     // name
     // preview_url
+  }).catch(function(err){
+    console.log(err)
   })
 }
 
