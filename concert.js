@@ -1,5 +1,5 @@
 var axios = require('axios');
-//var moment
+var moment = require('moment');
 
 function concert(a) {
   axios.get("https://rest.bandsintown.com/artists/" + a + "/events?app_id=codingbootcamp")
@@ -8,7 +8,7 @@ function concert(a) {
     res.data.forEach(function(concert) {
       console.log('Location: ' + concert.venue.city + ', ' + concert.venue.country);
       console.log('Venue: ' + concert.venue.name);
-      console.log('Date: ' + concert.datetime);
+      console.log('Date and time: ' + moment(concert.datetime).format("MM/DD/YYYY h:mmA"));
       console.log('\n---------------------\n');
     })
   }).catch(function(error) {
