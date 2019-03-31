@@ -9,7 +9,6 @@ var getSpotify = function(a) {
     query: a,
   }).then(function(resp) {
 
-    
     if (resp.tracks.items.length) {
       resp.tracks.items.forEach(function(item) {
         var artist = item.album.artists[0].name;
@@ -19,16 +18,13 @@ var getSpotify = function(a) {
         console.log('Artist: ', artist);
         console.log('Song Title: ', songName);
         console.log('Preview Link: ', previewLink);
-        console.log('Album: ', album)
+        console.log('Album: ', album);
+        console.log('-----------------------\n');
       })
     } else {
+      getSpotify("the sign");
        // if no results, default to "the sign" by ace of base
     }
-    
-
-    //JSON.stringify(result, null, 2)
-
-   
 
   }).catch(function(err){
     console.log(err)

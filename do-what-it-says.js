@@ -1,9 +1,10 @@
 
 var fs = require('fs');
 
-function doWhatItSays() {
+function doWhatItSays(func) {
   fs.readFile('./random.txt', 'utf-8', function(err, resp) {
-    console.log(resp)
+    var command = resp.split(',');
+    func(command[0], command[1]);
   })
 }
 
