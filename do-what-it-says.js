@@ -2,7 +2,9 @@
 var fs = require('fs');
 
 function doWhatItSays() {
-  console.log('do something')
+  fs.readFile('./random.txt', 'utf-8', function(err, resp) {
+    console.log(resp)
+  })
 }
 
 module.exports = doWhatItSays;
