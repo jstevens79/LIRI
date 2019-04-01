@@ -15,10 +15,13 @@ function getMovie(movieName, noneFound) {
   axios.get(searchUrl)
   .then(function(resp) { 
     var mov = resp.data;
+    
     if (mov.Response === 'True') {
+      var myRating = mov.Ratings.filter(rating => rating.Source === 'Internet Movie Database');
+
       console.log('Title: ' + mov.Title);
       console.log('Year: ' + mov.Year);
-      console.log('IMDB Rating: ' + mov.Ratings);
+      console.log('IMDB Rating: ' + myRating[0].Value);
       console.log('Country Produced: ' + mov.Country);
       console.log('Language: ' + mov.Language);
       console.log('Plot: ' + mov.Plot);
