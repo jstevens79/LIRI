@@ -3,7 +3,7 @@ var Spotify = require('node-spotify-api');
 var keys = require('./keys.js');
 var spotify = new Spotify(keys.spotify)
 
-var getSpotify = function(a) {
+var getSpotify = function(a, def) {
   spotify.search({
     type: 'track',
     query: a,
@@ -22,8 +22,8 @@ var getSpotify = function(a) {
         console.log('-----------------------\n');
       })
     } else {
-      getSpotify("the sign");
-       // if no results, default to "the sign" by ace of base
+      // if no results, default to "the sign" by ace of base
+      getSpotify("the sign", true);
     }
 
   }).catch(function(err){
