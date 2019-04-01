@@ -4,8 +4,24 @@
 This CLI application will fetch Spotify info, 
 
 
-## Functionality
+## Requirements
+- Node
+- NPM
+- A command line interface (like Terminal or Bash)
 
 
 ## Installation
-LIRI requires node, and installs...
+1. Clone or download the repository to your computer.
+2. Open your CLI and navigate to the folder.
+3. Run `npm install`
+
+All dependencies should now be installed and LIRI is ready for use
+
+
+## Using LIRI
+1. Get a song listing from Spotify
+
+
+
+
+
