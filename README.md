@@ -18,9 +18,15 @@ This CLI application will fetch Spotify info, Concert info, Movie info and more 
 1. Clone or download the repository to your computer.
 2. Open your CLI and navigate to the folder.
 3. Run `npm install`
+4. Add a .env file to the root of the directory with the following content:
+
+```javascript
+SPOTIFY_ID=your spotify id here
+SPOTIFY_SECRET=your spotify secret here
+OMDB_KEY=your omdb key here
+```
 
 All dependencies should now be installed and LIRI is ready for use
-
 
 ## Using LIRI
 
