@@ -3,6 +3,10 @@
 
 This CLI application will fetch Spotify info, 
 
+#### View a demo (click the image): 
+
+[![LIRI Demo](http://img.youtube.com/vi/Jub7VOdh9Xk/0.jpg)](http://www.youtube.com/watch?v=Jub7VOdh9Xk)
+
 
 ## Requirements
 - Node
